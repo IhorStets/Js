@@ -84,13 +84,13 @@
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
 // Для кожного об'єкту окремий блок.
 
-// let mass3 = [
-//     {id: 23, name: 'Ivan', age: 33},
-//     {id: 24, name: 'Petro', age: 22},
+// let massiv = [
+//     {id: 7, name: 'Ivan', age: 33},
+//     {id: 11, name: 'Petro', age: 22},
 //     {id: 25, name: 'Oleg', age: 44}];
-// function mass5(array) {
+// function okten(array) {
 //     for (const newArray of array) {
 //         document.write(`<div>${newArray.id}.${newArray.name} - ${newArray.age}</div>`);
 //     }
 // }
-// mass5(mass3);
+// okten(massiv);
