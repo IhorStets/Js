@@ -35,8 +35,8 @@
 // let array = [33, 41, 57, true, 'Okten'];
 //
 // function priyom(a) {
-//     for (i = 0; i<array.length; i++){
-//         console.log(array[i]);
+//     for (i = 0; i<a.length; i++){
+//         console.log(a[i]);
 //     }
 // }
 // priyom(array)
