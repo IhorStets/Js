@@ -65,3 +65,4 @@ coursesAndDurationArray.forEach( value => {
     div.append(h1,p);
     document.body.appendChild(div)
 })
+
