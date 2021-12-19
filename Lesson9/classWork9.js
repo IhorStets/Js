@@ -167,34 +167,41 @@ const coursesArray = [
 
 coursesArray.forEach(item => {
     const divCours = document.createElement('div');
-    divCours.classList.add('cours');
+    divCours.classList = 'Cours'
     document.body.appendChild(divCours);
 
+
     const divDuration = document.createElement('div');
-    divDuration.classList.add('duration');
+    divDuration.style.display = 'flex';
 
 
     const divModules = document.createElement('div');
-    divModules.classList.add('modules');
 
-    for (const key in item) {
-        if (key === 'title') {
-            const divTitle = document.createElement('div');
-            divTitle.innerText = `${key}:${item[key]}`;
-            divCours.appendChild(divTitle);
-        }
-        else if (key === 'monthDuration' || 'hourDuration') {
-            const divDurationInsert = document.createElement('div');
-            divDurationInsert.innerText = `${key}:${item[key]}`;
-            divDuration.appendChild(divDurationInsert);
-        } else {
-            document.createElement('div')
-        }
 
-    }
-    divCours.appendChild(divDuration);
-    divCours.appendChild(divModules);
+    const divTitle = document.createElement('h2');
+    divTitle.innerText = item.title;
 
+
+    const divMonthDuration = document.createElement('div');
+    divMonthDuration.innerText = item.monthDuration;
+    divMonthDuration.style.width = '30%';
+
+    const divHourDuration = document.createElement('div');
+    divHourDuration.innerText = item.hourDuration;
+    divHourDuration.style.width = '70%';
+
+    divDuration.append(divMonthDuration, divHourDuration);
+
+    item.modules.forEach(Modul => {
+        const divModul = document.createElement('div');
+        divModul.innerText = Modul
+        divModules.appendChild(divModul)
+    })
+
+
+
+
+    divCours.append(divTitle, divDuration, divModules);
 })
 
 
