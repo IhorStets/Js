@@ -4,7 +4,6 @@
 // Всі характеристики повинні мати свої блоки всередені div.post
 // https://jsonplaceholder.typicode.com/posts
 //
-//
 let postsDiv = document.getElementsByClassName('posts')[0];
 
 fetch('https://jsonplaceholder.typicode.com/posts')
