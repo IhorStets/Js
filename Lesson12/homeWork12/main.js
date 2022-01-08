@@ -30,3 +30,39 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             postsDiv.appendChild(postDiv);
         }
     });
+
+// 2.
+// Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті.
+// Для кожного елементу свій блок div.comment
+// Всі характеристики повинні мати свої блоки всередені div.comment
+// https://jsonplaceholder.typicode.com/comments
+
+let commentsDiv = document.getElementsByClassName('comments')[0];
+
+fetch('https://jsonplaceholder.typicode.com/comments')
+    .then(value => value.json())
+    .then(value => {
+
+        for (const commentItem of value) {
+            let commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment');
+
+            let commentPostIdDiv = document.createElement('div');
+            commentPostIdDiv.innerText = 'post ID -' + commentItem.postId;
+
+            let commentIdDiv = document.createElement('div');
+            commentIdDiv.innerText = 'ID -' + commentItem.id;
+
+            let commentNameDiv = document.createElement('div');
+            commentNameDiv.innerText = commentItem.name;
+
+            let commentEmailDiv = document.createElement('div');
+            commentEmailDiv.innerText = commentItem.email;
+
+            let commentBodyDiv = document.createElement('p');
+            commentBodyDiv.innerText = commentItem.body;
+
+            commentDiv.append(commentPostIdDiv, commentIdDiv, commentNameDiv, commentEmailDiv, commentBodyDiv);
+            commentsDiv.appendChild(commentDiv);
+        }
+    })
